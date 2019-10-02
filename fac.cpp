@@ -16,7 +16,7 @@ int main()
             j=j/10;
         }
         int p,q,m;
-        int y=pow(10,c);
+        long int y=pow(10,c);
         if(c%2==0)
             m=y+1;
         else
