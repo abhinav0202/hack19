@@ -18,6 +18,7 @@ int partion(int a[],int l,int h)
         return i;
 
     }
+//here we are writing the code for quick function in which we passing the array,the lower and upper limits
     void quick(int a[],int l,int h)
     {
         if(l<h)
@@ -36,6 +37,7 @@ int partion(int a[],int l,int h)
             cin>>a[i];
         int l=1;
         int h=n;
+        //calling the quick function
         quick(a,l,h);
         for(int i=1;i<=n;i++)
             cout<<a[i];
