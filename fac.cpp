@@ -1,6 +1,7 @@
 #include<iostream>
 #include<math.h>
 using namespace std;
+//here we are writing the code for kaprekar numbers
 int main()
 {
     int a,b,i;
@@ -16,6 +17,7 @@ int main()
             j=j/10;
         }
         int p,q,m;
+        //we are using the functions of math.h library through which we calculate the power on any number  
         long int y=pow(10,c);
         if(c%2==0)
             m=y+1;
