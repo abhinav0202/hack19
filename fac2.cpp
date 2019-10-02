@@ -1,35 +1,44 @@
 #include<iostream>
-#include<math.h>
 using namespace std;
-int main()
-{
-    int a,b,i;
-    cin>>a>>b;
-    for(i=a;i<=b;i++)
+
+int partion(int a[],int l,int h)
     {
-        int j=i;
-        int x=j*j;
-        int c=0;
-        while(j>0)
+        int i=l-1;
+        int p=a[h];
+        for(int j=l;j<h;j++)
         {
-            c++;
-            j=j/10;
+           if(a[j]<p)
+           {
+               i++;
+               swap(a[j],a[i]);
+           }
+
         }
-        int p,q,m;
-        long int y=pow(10,c);
-        if(c%2==0)
-            m=y+1;
-        else
-            m=y;
+        swap(a[i+1],a[h]);
+        return i;
 
-        p=x%m;
-        q=x/m;
-
-        int u=p+q;
-        if(u==i)
+    }
+    void quick(int a[],int l,int h)
+    {
+        if(l<h)
         {
-            cout<<i<<" ";
-
+            int pi=partion(a,l,h);
+            quick(a,l,pi);
+            quick(a,pi+2,h);
         }
     }
-}
+    int main()
+    {
+        int n;
+        cin>>n;
+        int a[n];
+        for(int i=1;i<=n;i++)
+            cin>>a[i];
+        int l=1;
+        int h=n;
+        quick(a,l,h);
+        for(int i=1;i<=n;i++)
+            cout<<a[i];
+
+    }
+
